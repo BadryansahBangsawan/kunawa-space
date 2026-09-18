@@ -44,3 +44,8 @@ Other scripts:
 - Fonts: Baloo 2 (display) and Inter (body) are loaded via `next/font`.
 - Images use Unsplash placeholders; swap with branded assets as needed.
 - Tailwind theme tokens live in `app/globals.css` for quick palette tweaks.
+
+## Troubleshooting
+
+- **WhatsApp opens the wrong chat:** `OWNER_NUMBER` in `components/cart-summary.tsx` and `app/reserve/page.tsx` must be digits only in international form (country code + number, no `+`, spaces, or dashes). Example: Indonesian `0812…` becomes `62812…` for `wa.me`.
+- **`next dev` fails on Node < 18:** Next.js 16 needs a current Node LTS. Check with `node -v`, then reinstall deps after upgrading.
